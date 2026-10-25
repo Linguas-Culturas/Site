@@ -304,6 +304,15 @@ body[data-idioma="italiano"] .banner .imgBanner {
   object-position: center 40%;
 }
 
+body[data-idioma="italiano"] .cta-card {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.95) 0%, rgba(239,250,244,.8) 62%, rgba(239,250,244,.62) 100%),
+    url("../fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.28.webp") center 45% / cover;
+}
+
+body[data-idioma="italiano"] .galeria .foto-grande img { object-position: center 42%; }
+body[data-idioma="italiano"] .galeria .galeria-coluna .foto:nth-child(2) img { object-position: center 58%; }
+
 body[data-idioma="latim"] .banner .imgBanner {
   object-position: center 65%;
 }
@@ -327,6 +336,15 @@ body[data-idioma="grego"] .galeria .foto-vertical img { object-position: center 
 body[data-idioma="japones"] .banner .imgBanner {
   object-position: center 50%;
 }
+
+body[data-idioma="japones"] .cta-card {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.95) 0%, rgba(255,241,244,.8) 62%, rgba(255,241,244,.62) 100%),
+    url("../fotos-japones/IMG_4017.webp") center 46% / cover;
+}
+
+body[data-idioma="japones"] .galeria .foto-grande img { object-position: center 55%; }
+body[data-idioma="japones"] .galeria .foto-vertical img { object-position: center 44%; }
 
 @media (max-width: 760px) {
   .projeto-destaque a { grid-template-columns: 1fr; }
@@ -361,5 +379,15 @@ body[data-idioma="japones"] .banner .imgBanner {
     background:
       linear-gradient(135deg, rgba(255,255,255,.96), rgba(238,248,255,.78)),
       url("../fotos-grego/IMG-20240709-WA0002.webp") center / cover;
+  }
+  body[data-idioma="italiano"] .cta-card {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.96), rgba(239,250,244,.8)),
+      url("../fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.28.webp") center / cover;
+  }
+  body[data-idioma="japones"] .cta-card {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,241,244,.8)),
+      url("../fotos-japones/IMG_4017.webp") center / cover;
   }
 }

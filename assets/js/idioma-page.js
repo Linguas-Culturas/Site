@@ -44,9 +44,11 @@ const idiomas = {
   },
   japones: {
     nome: 'Japonês', efeito: 'Escrita, narrativas e culturas do Japão', cor: '#ad3646',
-    apresentacao: 'O japonês aproxima estudantes de sistemas de escrita, sonoridades e manifestações culturais do Japão. A aprendizagem combina observação, experimentação e diálogo com produções artísticas, narrativas e práticas do cotidiano.',
+    apresentacao: 'Nas oficinas de japonês, os estudantes entram em contato com novos sons, formas de escrita e modos de organizar a comunicação. Hiragana, katakana e kanji aparecem ao lado de diálogos, mangás e situações do cotidiano, criando pontes entre o estudo da língua e diferentes manifestações culturais do Japão. O percurso valoriza a curiosidade, a leitura de imagens e a experimentação coletiva.',
     banner: 'assets/banners/banner_japones.jpeg',
     bannerAlt: 'Ipê-rosa florido no campus da UFMG',
+    apresentacaoImagem: 'assets/fotos-japones/IMG_3888.webp',
+    apresentacaoAlt: 'Estudante consultando o material didático de japonês durante a oficina',
     curiosidades: [
       { numero: 3, texto: 'Sistemas de escrita convivem: hiragana, katakana e kanji', icone: 'escrita' },
       { titulo: '≈125 milhões', texto: 'De falantes, principalmente no Japão', icone: 'pessoas' },
@@ -54,12 +56,20 @@ const idiomas = {
       { titulo: '2,7 milhões', texto: 'De descendentes de japoneses vivem no Brasil, a maior comunidade nikkei fora do Japão', icone: 'globo' },
     ],
     materiais: [{ titulo: 'Japonês I', descricao: 'Material didático do projeto para as primeiras experiências com a língua.', capa: 'assets/capas/Japonês.png', link: 'https://www.canva.com/design/DAGtP_79ueA/U49dBBzpc4t1j-dWX_SzJw/watch' }],
+    galeria: [
+      { src: 'assets/fotos-japones/IMG_4009.webp', alt: 'Oficina de japonês com estudantes acompanhando uma explicação sobre números e cultura', legenda: 'Japonês em sala de aula', classe: 'foto-grande' },
+      { src: 'assets/fotos-japones/IMG_4014.webp', alt: 'Estudante folheando um mangá em japonês durante uma atividade', legenda: 'Língua, imagem e narrativa', classe: 'foto' },
+      { src: 'assets/fotos-japones/IMG_4017.webp', alt: 'Integrantes do projeto reunidos diante de um mural com cartões-postais', legenda: 'Encontros do projeto', classe: 'foto' },
+      { src: 'assets/fotos-japones/IMG_3892.webp', alt: 'Aula de japonês com apresentação projetada e estudantes reunidos', legenda: 'Aprender em conjunto', classe: 'foto-vertical' },
+    ],
   },
   italiano: {
     nome: 'Italiano', efeito: 'Memória, arte e situações de comunicação', cor: '#16845b',
-    apresentacao: 'O italiano permite investigar encontros entre língua, memória, deslocamentos, arte e cotidiano. As propostas de aprendizagem podem partir de situações comunicativas e de repertórios culturais diversos, sempre em diálogo com a experiência dos estudantes.',
+    apresentacao: 'As oficinas de italiano transformam situações de comunicação em experiências práticas e coletivas. Jogos, imagens, receitas, viagens imaginadas e atividades artísticas ajudam os estudantes a ampliar o vocabulário e a perceber relações entre língua, memória e cotidiano. A proposta aproxima diferentes repertórios culturais sem perder de vista a participação e a experiência de cada turma.',
     banner: 'assets/banners/banner_italiano.jpeg',
     bannerAlt: 'Estudantes exibindo pinturas produzidas em uma atividade cultural',
+    apresentacaoImagem: 'assets/fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.28.webp',
+    apresentacaoAlt: 'Estudantes participando de um jogo linguístico durante a oficina de italiano',
     curiosidades: [
       { titulo: 'Origem latina', texto: 'O italiano é uma língua românica desenvolvida a partir do latim falado', icone: 'idiomas' },
       { titulo: 'Dante', texto: 'O prestígio de sua obra em toscano ajudou a formar a base do italiano padrão', icone: 'livro' },
@@ -67,6 +77,12 @@ const idiomas = {
       { titulo: 'Suíça', texto: 'O italiano é uma das línguas oficiais da Confederação Suíça', icone: 'globo' },
     ],
     materiais: [{ titulo: 'Le mie ricette', descricao: 'Material didático que explora a língua italiana a partir de repertórios culinários.', capa: 'assets/capas/italiano.jpg', link: 'https://canva.link/j2bdy8hd3iyn6xa' }],
+    galeria: [
+      { src: 'assets/fotos-italiano/IMG_4308.webp', alt: 'Artista convidada apresentando uma atividade prática a estudantes do COLTEC', legenda: 'Cultura em experimentação', classe: 'foto-grande' },
+      { src: 'assets/fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.28 (2).webp', alt: 'Estudantes organizando peças de um jogo de italiano sobre as mesas', legenda: 'Aprender jogando', classe: 'foto' },
+      { src: 'assets/fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.29.webp', alt: 'Caixa do jogo de italiano Domino della Giornata', legenda: 'Vocabulário em movimento', classe: 'foto' },
+      { src: 'assets/fotos-italiano/WhatsApp Image 2026-09-08 at 12.23.28 (1).webp', alt: 'Professora escrevendo expressões em italiano no quadro', legenda: 'Da expressão à conversa', classe: 'foto-vertical' },
+    ],
   },
   latim: {
     nome: 'Latim', efeito: 'Palavras, histórias e mundos antigos', cor: '#962b2b',
