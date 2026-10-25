@@ -1,7 +1,7 @@
 # Destaques alimentados pelo Notion
 
 Esta integração atualiza a seção **Destaques** da página inicial e o acervo de
-**Reportagens e podcasts**.
+**Publicações na mídia** (reportagens, podcasts e vídeos).
 O navegador lê o arquivo público `data/destaques.json`; ele nunca recebe o token
 do Notion nem chama a API do Notion diretamente.
 
@@ -12,7 +12,7 @@ do Notion nem chama a API do Notion diretamente.
 - `.github/workflows/sync-notion.yml`: executa a sincronização manualmente ou
   todos os dias e só cria um commit quando o JSON mudou.
 - `data/destaques.json`: acervo publicado que a página inicial e a página de
-  reportagens consomem.
+  publicações consomem.
 - `index.html`, `assets/css/index.css` e `assets/js/index.js`: contêiner,
   aparência e renderização dos cards.
 
@@ -24,7 +24,9 @@ do Notion nem chama a API do Notion diretamente.
    data source `DESTAQUES` (não o ID da página que apenas contém a tabela).
 3. Adicione à database uma propriedade de checkbox chamada `DESTAQUE`. Marque
    apenas os itens que devem aparecer na home. Se nenhum estiver marcado, a home
-   usa os três primeiros itens definidos por `ORDEM`.
+   usa os três primeiros itens definidos por `ORDEM`. Mesmo que mais itens sejam
+   marcados, a home exibe no máximo três; todos continuam disponíveis na página
+   de publicações.
 4. No Notion, abra a database original, use **••• → Add connections** e compartilhe
    a database com essa Internal Connection. Ela precisa da capacidade **Read content**.
 
@@ -41,8 +43,9 @@ commit chegar à branch de publicação.
 - **403**: a conexão não possui a capacidade **Read content**.
 - **404**: o ID está incorreto ou a database original não foi compartilhada com a
   conexão.
-- **Nenhum card**: confirme que `PUBLICADO` está marcado e que cada item possui
-  `NOME` e `URL`. Itens sem um desses dois campos são ignorados com aviso no log.
+- **Item ausente**: confirme que `PUBLICADO` está marcado e que o item possui
+  `NOME` e `URL`. A sincronização consulta somente registros publicados, e itens
+  sem um desses dois campos são ignorados com aviso no log.
 
 As URLs de arquivos hospedados pelo Notion podem expirar. Como o workflow é diário,
 ele atualiza essas URLs sempre que o Notion fornecer uma nova versão.

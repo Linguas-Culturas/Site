@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const marcadosComoDestaque = destaques.filter((item) => item.destaque === true);
         const destaquesPrincipais = marcadosComoDestaque.length
-          ? marcadosComoDestaque
+          ? marcadosComoDestaque.slice(0, 3)
           : destaques.slice(0, 3);
 
         destaquesPrincipais.forEach((destaque) => {

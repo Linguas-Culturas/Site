@@ -53,7 +53,6 @@ async function queryDataSource(token, dataSourceId) {
   do {
     const body = {
       page_size: 100,
-      filter: { property: 'PUBLICADO', checkbox: { equals: true } },
       sorts: [{ property: 'ORDEM', direction: 'ascending' }],
       result_type: 'page',
     };
@@ -95,10 +94,12 @@ async function main() {
   const token = requiredEnv('NOTION_TOKEN');
   const dataSourceId = requiredEnv('NOTION_DATA_SOURCE_ID');
   const pages = await queryDataSource(token, dataSourceId);
-  const items = pages.map(mapEntry).filter(Boolean).sort((a, b) => a.ordem - b.ordem);
+  const publishedPages = pages.filter((page) => page.properties?.PUBLICADO?.checkbox === true);
+  const items = publishedPages.map(mapEntry).filter(Boolean).sort((a, b) => a.ordem - b.ordem);
 
   await writeJson(items);
-  console.log(`${items.length} destaque(s) publicado(s) em data/destaques.json.`);
+  console.log(`${pages.length - publishedPages.length} registro(s) não publicado(s) foram mantidos fora do site.`);
+  console.log(`${items.length} publicação(ões) sincronizada(s) em data/destaques.json.`);
 }
 
 main().catch((error) => {
