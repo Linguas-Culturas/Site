@@ -305,7 +305,7 @@ body[data-idioma="italiano"] .banner .imgBanner {
 }
 
 body[data-idioma="latim"] .banner .imgBanner {
-  object-position: center 42%;
+  object-position: center 65%;
 }
 
 body[data-idioma="latim"] .cta-card {
@@ -313,8 +313,6 @@ body[data-idioma="latim"] .cta-card {
     linear-gradient(120deg, rgba(255,255,255,.95) 0%, rgba(255,245,241,.78) 62%, rgba(255,245,241,.6) 100%),
     url("../fotos-latim/IMG_4095.webp") center 44% / cover;
 }
-
-body[data-idioma="grego"] .banner .imgBanner { object-position: center 48%; }
 
 body[data-idioma="grego"] .cta-card {
   background:

@@ -71,8 +71,8 @@ const idiomas = {
   latim: {
     nome: 'Latim', efeito: 'Palavras, histórias e mundos antigos', cor: '#962b2b',
     apresentacao: 'Nas oficinas de latim, a língua é o ponto de partida para uma viagem pela Roma Antiga. Textos, atividades de tradução, literatura, mitologia e situações do cotidiano aproximam os estudantes de um patrimônio que ainda vive no português e em muitas outras línguas. O percurso combina leitura, descoberta e imaginação para mostrar que estudar latim também é compreender melhor as palavras, as ideias e as histórias que chegaram até nós.',
-    banner: 'assets/fotos-latim/IMG_4095.webp',
-    bannerAlt: 'Aula de latim no COLTEC, com explicações e anotações no quadro',
+    banner: 'assets/banners/banner_latim.jpeg',
+    bannerAlt: 'Área externa do COLTEC cercada por árvores',
     apresentacaoImagem: 'assets/fotos-latim/IMG_4103.webp',
     apresentacaoAlt: 'Estudantes realizando uma atividade de tradução em seus materiais de latim',
     curiosidades: [
@@ -99,8 +99,8 @@ const idiomas = {
   grego: {
     nome: 'Grego Antigo', efeito: 'Alfabeto, narrativas e pensamento', cor: '#31739c',
     apresentacao: 'O grego antigo aproxima os estudantes de uma tradição que atravessa língua, mitologia, teatro, filosofia e ciência. As oficinas apresentam o alfabeto, aspectos da gramática e histórias do mundo antigo de forma leve e investigativa, com leituras, jogos, imagens e atividades coletivas. Mais do que observar palavras do passado, a proposta é reconhecer ideias e narrativas que continuam circulando no presente.',
-    banner: 'assets/fotos-grego/IMG-20240709-WA0002.webp',
-    bannerAlt: 'Turma da oficina de grego antigo reunida ao final de uma atividade no COLTEC',
+    banner: 'assets/banners/banner_grego.jpeg',
+    bannerAlt: 'Estojo de aquarela usado em uma atividade artística',
     apresentacaoImagem: 'assets/fotos-grego/IMG-20240701-WA0008.webp',
     apresentacaoAlt: 'Oficina de grego antigo com estudantes acompanhando uma explicação em sala',
     curiosidades: [
