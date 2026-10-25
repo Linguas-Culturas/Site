@@ -59,7 +59,7 @@ const idiomas = {
     galeria: [
       { src: 'assets/fotos-japones/IMG_4009.webp', alt: 'Oficina de japonês com estudantes acompanhando uma explicação sobre números e cultura', legenda: 'Japonês em sala de aula', classe: 'foto-grande' },
       { src: 'assets/fotos-japones/IMG_4014.webp', alt: 'Estudante folheando um mangá em japonês durante uma atividade', legenda: 'Língua, imagem e narrativa', classe: 'foto' },
-      { src: 'assets/fotos-japones/IMG_4017.webp', alt: 'Integrantes do projeto reunidos diante de um mural com cartões-postais', legenda: 'Encontros do projeto', classe: 'foto' },
+      { src: 'assets/fotos-japones/IMG_3896.webp', alt: 'Estudantes realizando uma atividade com o material didático de japonês em sala de aula', legenda: 'Encontros do projeto', classe: 'foto' },
       { src: 'assets/fotos-japones/IMG_3892.webp', alt: 'Aula de japonês com apresentação projetada e estudantes reunidos', legenda: 'Aprender em conjunto', classe: 'foto-vertical' },
     ],
   },
