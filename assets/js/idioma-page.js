@@ -131,7 +131,7 @@ const idiomas = {
       trecho: 'A viagem ao Mundo Antigo se inicia com uma propedêutica leve, lições e histórias de um mundo fascinante.',
       contexto: 'O prefácio destaca a combinação entre língua, alfabeto, gramática, mitologia e jogos de palavras, com personagens como Héracles, Afrodite e Polifemo acompanhando a aprendizagem.',
       autora: 'Tereza Virgínia Ribeiro Barbosa',
-      credito: 'Autora do prefácio do material de Grego Antigo',
+      credito: 'Professora da FALE/UFMG e autora do prefácio',
     },
     galeria: [
       { src: 'assets/fotos-grego/20240711_164850.webp', alt: 'Mural da oficina de grego com fotografias, atividades e palavras em grego', legenda: 'Memórias da oficina', classe: 'foto-grande' },
@@ -196,12 +196,6 @@ function videos(idioma) {
   return `<section class="videos-idioma" aria-labelledby="videos-title"><div class="videos-cabecalho"><div><p class="videos-kicker">Encontros em movimento</p><h2 id="videos-title">Vivências em vídeo</h2></div><p>Do cotidiano das aulas ao intercâmbio internacional, acompanhe alguns momentos da trajetória do mandarim no projeto.</p></div><div class="videos-grid">${cards}</div></section>`;
 }
 
-function prefacio(idioma) {
-  if (!idioma.prefacio) return '';
-  const { titulo, trecho, contexto, autora, credito } = idioma.prefacio;
-  return `<section class="prefacio-livro" aria-labelledby="prefacio-title"><div class="prefacio-marca" aria-hidden="true">“</div><div class="prefacio-conteudo"><p class="prefacio-kicker">Do prefácio do material</p><h2 id="prefacio-title">${titulo}</h2><blockquote><p>${trecho}</p></blockquote><p class="prefacio-contexto">${contexto}</p><p class="prefacio-autoria"><strong>${autora}</strong><span>${credito}</span></p></div></section>`;
-}
-
 function imagemBanner(idioma) {
   if (idioma.banner) return `<img class="imgBanner" src="${idioma.banner}" alt="${idioma.bannerAlt || ''}">`;
   return '<div class="imgBanner idioma-banner-placeholder">Imagem do idioma em atualização</div>';
@@ -210,6 +204,15 @@ function imagemBanner(idioma) {
 function imagemApresentacao(idioma) {
   if (idioma.apresentacaoImagem) return `<img src="${idioma.apresentacaoImagem}" alt="${idioma.apresentacaoAlt || `Atividade de ${idioma.nome}`}">`;
   return '<div class="idioma-placeholder-foto">Imagem e registros das atividades<br>em atualização</div>';
+}
+
+function introducao(idioma) {
+  if (!idioma.prefacio) {
+    return `<section class="descricao"><h1 class="subtitulo">Sobre o idioma</h1><div class="presentation"><div class="presImg">${imagemApresentacao(idioma)}</div><div class="presContent"><p class="presEffect">${idioma.efeito}</p><p class="text">${idioma.apresentacao}</p></div></div></section>`;
+  }
+
+  const { titulo, trecho, contexto, autora, credito } = idioma.prefacio;
+  return `<section class="descricao descricao-prefacio"><h1 class="subtitulo">Do prefácio</h1><div class="presentation"><div class="presImg">${imagemApresentacao(idioma)}</div><div class="presContent"><p class="prefacio-kicker">Trecho do prefácio do material</p><p class="presEffect">${titulo}</p><blockquote class="prefacio-trecho"><p>${trecho}</p></blockquote><p class="prefacio-contexto">${contexto}</p><p class="prefacio-autoria"><strong>${autora}</strong><span>${credito}</span></p></div></div></section>`;
 }
 
 function explorar(idAtual) {
@@ -259,7 +262,7 @@ function renderizarPaginaIdioma() {
   const secaoMateriais = idioma.ocultarMateriais ? '' : `<section class="materiais"><h1 class="subtitulo">Materiais e publicações</h1>${materiais(idioma)}</section>`;
   const iconePessoas = '<svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   const iconeGlobo = '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3c2.3 2.4 3.4 5.4 3.4 9S14.3 18.6 12 21c-2.3-2.4-3.4-5.4-3.4-9S9.7 5.4 12 3Z" stroke="currentColor" stroke-width="1.8"/></svg>';
-  raiz.innerHTML = `<section class="banner">${imagemBanner(idioma)}<h1 class="titulo">${idioma.nome}</h1></section><section class="descricao"><h1 class="subtitulo">Sobre o idioma</h1><div class="presentation"><div class="presImg">${imagemApresentacao(idioma)}</div><div class="presContent"><p class="presEffect">${idioma.efeito}</p><p class="text">${idioma.apresentacao}</p></div></div></section><section class="curiosidades">${idioma.curiosidades.map(cardInfo).join('')}</section>${projeto}${secaoMateriais}${prefacio(idioma)}${videos(idioma)}${galeria(idioma)}<div data-depoimentos-section data-idioma="${id}"></div><section class="cta-inscricao"><div class="cta-card"><div class="cta-icone" aria-hidden="true">${iconePessoas}</div><div class="cta-texto"><h2>Gostou do ${idioma.nome}?</h2><p>Participe gratuitamente das oficinas do projeto Línguas e Culturas. Aprenda, compartilhe experiências e descubra o mundo pelo idioma.</p></div><a class="cta-botao" href="em-construcao.html">Quero participar</a></div></section><section class="explorar-idiomas"><div class="explorar-card"><div class="idiomas-icone" aria-hidden="true">${iconeGlobo}</div><div class="explorar-texto"><h2>Explore outros idiomas</h2><p>Cada língua abre uma nova janela para o mundo. Conheça também as outras frentes do projeto.</p></div><div class="filtro-idiomas">${explorar(id)}</div></div></section>`;
+  raiz.innerHTML = `<section class="banner">${imagemBanner(idioma)}<h1 class="titulo">${idioma.nome}</h1></section>${introducao(idioma)}<section class="curiosidades">${idioma.curiosidades.map(cardInfo).join('')}</section>${projeto}${secaoMateriais}${videos(idioma)}${galeria(idioma)}<div data-depoimentos-section data-idioma="${id}"></div><section class="cta-inscricao"><div class="cta-card"><div class="cta-icone" aria-hidden="true">${iconePessoas}</div><div class="cta-texto"><h2>Gostou do ${idioma.nome}?</h2><p>Participe gratuitamente das oficinas do projeto Línguas e Culturas. Aprenda, compartilhe experiências e descubra o mundo pelo idioma.</p></div><a class="cta-botao" href="em-construcao.html">Quero participar</a></div></section><section class="explorar-idiomas"><div class="explorar-card"><div class="idiomas-icone" aria-hidden="true">${iconeGlobo}</div><div class="explorar-texto"><h2>Explore outros idiomas</h2><p>Cada língua abre uma nova janela para o mundo. Conheça também as outras frentes do projeto.</p></div><div class="filtro-idiomas">${explorar(id)}</div></div></section>`;
   iniciarCuriosidades(raiz);
   raiz.querySelectorAll('.miniatura').forEach((miniatura) => miniatura.addEventListener('click', (evento) => {
     evento.preventDefault();

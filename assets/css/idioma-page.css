@@ -95,32 +95,8 @@ body[data-idioma] .curiosidades .info h3.numero {
 .projeto-destaque p { color: rgba(255,255,255,.84); font-size: 18px; line-height: 1.55; }
 .projeto-destaque h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); }
 
-.prefacio-livro {
-  position: relative;
-  display: grid;
-  grid-template-columns: clamp(72px, 10vw, 132px) minmax(0, 1fr);
-  gap: clamp(18px, 4vw, 48px);
-  width: min(1180px, 94vw);
-  margin: clamp(48px, 7vw, 84px) auto 0;
-  padding: clamp(28px, 5vw, 64px);
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--accent, #355d8c) 20%, white);
-  border-radius: 26px;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent, #355d8c) 9%, white), #fff 58%);
-  box-shadow: 0 18px 46px rgba(30, 24, 18, .08);
-}
-
-.prefacio-marca {
-  color: var(--accent, #355d8c);
-  font-family: Georgia, serif;
-  font-size: clamp(92px, 13vw, 170px);
-  line-height: .72;
-  text-align: center;
-  opacity: .9;
-}
-
-.prefacio-conteudo { max-width: 850px; }
+.descricao-prefacio .presentation { align-items: start; }
+.descricao-prefacio .presContent { padding-top: clamp(4px, 1.5vw, 18px); }
 
 .prefacio-kicker {
   margin: 0 0 8px;
@@ -131,20 +107,13 @@ body[data-idioma] .curiosidades .info h3.numero {
   text-transform: uppercase;
 }
 
-.prefacio-conteudo h2 {
-  margin: 0;
-  font-size: clamp(30px, 4.4vw, 54px);
-  line-height: 1.03;
-  letter-spacing: -.035em;
-}
-
-.prefacio-conteudo blockquote {
+.prefacio-trecho {
   margin: clamp(22px, 3vw, 34px) 0 18px;
   padding-left: clamp(18px, 3vw, 30px);
   border-left: 4px solid var(--accent, #355d8c);
 }
 
-.prefacio-conteudo blockquote p {
+.prefacio-trecho p {
   margin: 0;
   font-family: Georgia, serif;
   font-size: clamp(21px, 2.6vw, 31px);
@@ -354,17 +323,7 @@ body[data-idioma="japones"] .galeria .foto-vertical img { object-position: cente
   .video-card,
   .video-card:nth-child(2),
   .video-card--destaque { grid-column: auto; }
-  .prefacio-livro {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 28px 22px 32px;
-  }
-  .prefacio-marca {
-    height: 48px;
-    font-size: 100px;
-    line-height: .8;
-    text-align: left;
-  }
+  .descricao-prefacio .presContent { padding-top: 0; }
   body[data-idioma="mandarim"] .cta-card {
     background:
       linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,248,232,.75)),
