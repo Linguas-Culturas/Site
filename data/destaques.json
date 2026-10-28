@@ -9,6 +9,15 @@
     "destaque": false
   },
   {
+    "nome": "Estudantes do Coltec/UFMG viajam à China para intercâmbio cultural e cursos de mandarim",
+    "url": "https://agenciamg.com.br/2026/06/13/intercambio-estudantes-ufmg-china/",
+    "tipo": "REPORTAGEM",
+    "briefing": "Dois estudantes do Colégio Técnico (Coltec) da UFMG embarcarão para a China em julho para um intercâmbio de 15 dias. Arthur Augusto Lara Matos e Miguel Ângelo Rodrigues de Araújo foram […]",
+    "capa": "https://agenciamg.com.br/wp-content/uploads/2026/06/agenciamg-408-840x447.avif",
+    "ordem": 2,
+    "destaque": false
+  },
+  {
     "nome": "Há 11 anos, parceria entre Coltec e Instituto Confúcio oferta aulas gratuitas de mandarim na UFMG",
     "url": "https://www.youtube.com/watch?v=Je0VmlMsa5k&t=2s",
     "tipo": "VÍDEO",
@@ -33,6 +42,15 @@
     "briefing": "Viagem de 15 dias inclui atividades em Wuhan e Pequim, com aulas de idioma, imersão cultural e visitas a laboratórios de tecnologia de ponta; programa é financiado pelo Instituto Confúcio",
     "capa": "https://paranaibamais.com.br/wp-content/uploads/2026/06/Alunos-da-UFMG-1.jpg",
     "ordem": 5,
+    "destaque": false
+  },
+  {
+    "nome": "Especialização em literatura e cinema recebe inscrições até 20 de agosto; aulas começam em outubro",
+    "url": "https://www.ufmg.br/comunicacao/eventos/cursos/especializacao-em-literatura-e-cinema-recebe-inscricoes-ate-20-de-agosto-aulas-comecam-em-outubro/",
+    "tipo": "REPORTAGEM",
+    "briefing": "Estão abertas, até 20 de agosto, as inscrições para o curso de especialização em Literatura e Cinema, pós-graduação lato sensu que oferece formação interdisciplinar nas áreas de […]",
+    "capa": "https://www.ufmg.br//app/uploads/2026/07/Captura-de-tela-2026-07-22-104336.png",
+    "ordem": 6,
     "destaque": false
   }
 ]
