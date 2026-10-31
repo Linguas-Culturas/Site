@@ -18,6 +18,10 @@ do Notion nem chama a API do Notion diretamente.
 
 ## Configuração obrigatória no GitHub
 
+> Ao clonar, transferir ou criar um novo repositório, cadastre novamente os
+> secrets e variables abaixo. Eles pertencem ao repositório no GitHub e não são
+> transportados junto com os arquivos versionados.
+
 1. Em **Settings → Secrets and variables → Actions**, crie o secret
    `NOTION_TOKEN` com o token da Internal Connection.
 2. Na mesma tela, em **Variables**, crie `NOTION_DATA_SOURCE_ID` com o ID da

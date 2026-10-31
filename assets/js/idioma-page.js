@@ -1,17 +1,30 @@
 const idiomas = {
   espanhol: {
     nome: 'Espanhol', efeito: 'Língua, arte e América Latina', cor: '#b63a42',
-    apresentacao: 'No Línguas - Culturas, o espanhol é uma porta para as múltiplas vozes da América Latina, da Espanha e das comunidades hispanofalantes. As propostas articulam língua, arte, circulação de ideias e experiências de internacionalização.',
+    apresentacao: 'A língua espanhola e seu universo idiomático são concebidos por Carvalho (2019, p. 8) “como um bem cultural de acesso ao conhecimento, à inovação científica e estética, à constituição de subjetividades mais plurais e à integração latino-americana”. Com mais de 640 milhões de falantes potenciais e mais de 520 milhões de falantes nativos, o espanhol forma uma das maiores comunidades linguísticas do mundo.',
     banner: 'assets/fotos-espanhol/espanhol_abertura.jpeg',
     bannerAlt: 'Ipê-rosa florido no campus da UFMG',
+    apresentacaoImagem: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.38.52.jpeg',
+    apresentacaoAlt: 'Estudantes participando de uma atividade de espanhol no COLTEC',
     curiosidades: [
       { numero: 630, prefixo: '+', texto: 'Milhões de usuários potenciais no mundo', icone: 'pessoas' },
       { numero: 500, prefixo: '+', texto: 'Milhões de falantes com domínio nativo', icone: 'dialogo' },
       { numero: 20, texto: 'Países soberanos têm o espanhol como língua oficial', icone: 'globo' },
       { titulo: 'ONU', texto: 'Integra o grupo das seis línguas oficiais da organização', icone: 'onu' },
     ],
-    materiais: [{ titulo: 'Internacionalização e aprendizado de espanhol', descricao: 'Leitura de apoio sobre experiências de aprendizagem em espanhol.', capa: 'assets/capas/LIVRO_CONVERSAS.jpeg', link: 'em-construcao.html' }],
-    projeto: { titulo: 'Exposição Yo Artista', texto: 'Conheça a exposição de produções artísticas desenvolvidas por estudantes nas aulas de espanhol.', imagem: 'assets/imagens/yo_artista.png', link: 'yoartista2025.html' },
+    materiais: [
+      { titulo: 'Álbum de Espanhol — Copa do Mundo 2026', descricao: 'Álbum de figurinhas inspirado na Copa do Mundo. Autoras: Fernanda Peçanha Carvalho, Aléxia Miranda Santos e Jéssica Laura Rodrigues Gonçalves. Diálogos: Anthonela Cordoval Ribeiro e Rafael Souza Avansse de Oliveira.', capa: 'assets/capas/albumEspanhol.png', link: 'https://canva.link/espanholalbum' },
+      { titulo: 'Experiências do ensino de línguas no período pandêmico no COLTEC', descricao: 'Registro de práticas, desafios e aprendizagens construídos durante o ensino de línguas no período pandêmico.', capa: 'assets/capas/Experiências Ensino.png', link: 'https://canva.link/788x2d17g5bq5nb' },
+      { titulo: 'Internacionalização e aprendizado de espanhol', descricao: 'Leitura de apoio sobre experiências de aprendizagem, circulação de saberes e língua espanhola.', capa: 'assets/capas/LIVRO_CONVERSAS.jpeg', link: 'reportagens.html#artigos' },
+      { titulo: 'Representações dos professores de Espanhol', descricao: 'Capítulo sobre a Lei Federal nº 11.161/2005, publicado em Dez anos da “Lei do Espanhol”.', capa: 'assets/capas/representacoes.jpg', link: 'https://labed-letras-ufmg.com.br/publicacoes/dez-anos-da-lei-do-espanhol/' },
+    ],
+    projeto: { titulo: 'Exposição Yo Artista 2026', texto: 'Conheça a exposição digital de produções artísticas e audiodescrições desenvolvidas por estudantes nas aulas de espanhol.', imagem: 'assets/imagens/yo_artista.png', link: 'yoartista2026.html' },
+    galeria: [
+      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.17.jpeg', alt: 'Estudantes reunidos durante uma oficina de espanhol', legenda: 'Aprendizagem em encontro', classe: 'foto-grande' },
+      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.38.jpeg', alt: 'Participante em atividade cultural de espanhol', legenda: 'Língua e expressão', classe: 'foto-vertical' },
+      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.40.02.jpeg', alt: 'Turma participando de atividade do projeto', legenda: 'Construção coletiva', classe: 'foto' },
+      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-09-08 at 12.23.30 (1).jpeg', alt: 'Materiais utilizados em oficina de espanhol', legenda: 'Espanhol em prática', classe: 'foto' },
+    ],
   },
   mandarim: {
     nome: 'Mandarim', efeito: 'Escuta, escrita e encontros culturais', cor: '#9e2c2c',
@@ -115,7 +128,7 @@ const idiomas = {
   grego: {
     nome: 'Grego Antigo', efeito: 'Alfabeto, narrativas e pensamento', cor: '#31739c',
     apresentacao: 'O grego antigo aproxima os estudantes de uma tradição que atravessa língua, mitologia, teatro, filosofia e ciência. As oficinas apresentam o alfabeto, aspectos da gramática e histórias do mundo antigo de forma leve e investigativa, com leituras, jogos, imagens e atividades coletivas. Mais do que observar palavras do passado, a proposta é reconhecer ideias e narrativas que continuam circulando no presente.',
-    banner: 'assets/banners/banner_grego.jpeg',
+    banner: 'assets/banners/novo_banner_grego.jpg',
     bannerAlt: 'Estojo de aquarela usado em uma atividade artística',
     apresentacaoImagem: 'assets/fotos-grego/IMG-20240701-WA0008.webp',
     apresentacaoAlt: 'Oficina de grego antigo com estudantes acompanhando uma explicação em sala',
@@ -193,7 +206,7 @@ function galeria(idioma) {
 function videos(idioma) {
   if (!idioma.videos?.length) return '';
   const cards = idioma.videos.map((video) => `<article class="video-card${video.destaque ? ' video-card--destaque' : ''}"><div class="video-embed"><iframe width="560" height="315" src="${video.embed || `https://www.youtube.com/embed/${video.id}`}" title="${video.titulo}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-copy"><p>${video.etiqueta}</p><h3>${video.titulo}</h3><span>${video.descricao}</span><a href="https://youtu.be/${video.id}" target="_blank" rel="noopener noreferrer">Assistir no YouTube <b aria-hidden="true">↗</b></a></div></article>`).join('');
-  return `<section class="videos-idioma" aria-labelledby="videos-title"><div class="videos-cabecalho"><div><p class="videos-kicker">Encontros em movimento</p><h2 id="videos-title">Vivências em vídeo</h2></div><p>Do cotidiano das aulas ao intercâmbio internacional, acompanhe alguns momentos da trajetória do mandarim no projeto.</p></div><div class="videos-grid">${cards}</div></section>`;
+  return `<section class="videos-idioma" id="videos" aria-labelledby="videos-title"><div class="videos-cabecalho"><div><p class="videos-kicker">Encontros em movimento</p><h2 id="videos-title">Vivências em vídeo</h2></div><p>Do cotidiano das aulas ao intercâmbio internacional, acompanhe alguns momentos da trajetória do mandarim no projeto.</p></div><div class="videos-grid">${cards}</div></section>`;
 }
 
 function imagemBanner(idioma) {
@@ -262,7 +275,7 @@ function renderizarPaginaIdioma() {
   const secaoMateriais = idioma.ocultarMateriais ? '' : `<section class="materiais"><h1 class="subtitulo">Materiais e publicações</h1>${materiais(idioma)}</section>`;
   const iconePessoas = '<svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   const iconeGlobo = '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3c2.3 2.4 3.4 5.4 3.4 9S14.3 18.6 12 21c-2.3-2.4-3.4-5.4-3.4-9S9.7 5.4 12 3Z" stroke="currentColor" stroke-width="1.8"/></svg>';
-  raiz.innerHTML = `<section class="banner">${imagemBanner(idioma)}<h1 class="titulo">${idioma.nome}</h1></section>${introducao(idioma)}<section class="curiosidades">${idioma.curiosidades.map(cardInfo).join('')}</section>${projeto}${secaoMateriais}${videos(idioma)}${galeria(idioma)}<div data-depoimentos-section data-idioma="${id}"></div><section class="cta-inscricao"><div class="cta-card"><div class="cta-icone" aria-hidden="true">${iconePessoas}</div><div class="cta-texto"><h2>Gostou do ${idioma.nome}?</h2><p>Participe gratuitamente das oficinas do projeto Línguas e Culturas. Aprenda, compartilhe experiências e descubra o mundo pelo idioma.</p></div><a class="cta-botao" href="em-construcao.html">Quero participar</a></div></section><section class="explorar-idiomas"><div class="explorar-card"><div class="idiomas-icone" aria-hidden="true">${iconeGlobo}</div><div class="explorar-texto"><h2>Explore outros idiomas</h2><p>Cada língua abre uma nova janela para o mundo. Conheça também as outras frentes do projeto.</p></div><div class="filtro-idiomas">${explorar(id)}</div></div></section>`;
+  raiz.innerHTML = `<section class="banner">${imagemBanner(idioma)}<h1 class="titulo">${idioma.nome}</h1></section>${introducao(idioma)}<section class="curiosidades">${idioma.curiosidades.map(cardInfo).join('')}</section>${projeto}${secaoMateriais}${videos(idioma)}${galeria(idioma)}<div data-depoimentos-section data-idioma="${id}"></div><section class="cta-inscricao"><div class="cta-card"><div class="cta-icone" aria-hidden="true">${iconePessoas}</div><div class="cta-texto"><h2>Gostou do ${idioma.nome}?</h2><p>Participe gratuitamente das oficinas do projeto Línguas e Culturas. Aprenda, compartilhe experiências e descubra o mundo pelo idioma.</p></div><a class="cta-botao" href="inscricoes.html">Quero participar</a></div></section><section class="explorar-idiomas"><div class="explorar-card"><div class="idiomas-icone" aria-hidden="true">${iconeGlobo}</div><div class="explorar-texto"><h2>Explore outros idiomas</h2><p>Cada língua abre uma nova janela para o mundo. Conheça também as outras frentes do projeto.</p></div><div class="filtro-idiomas">${explorar(id)}</div></div></section>`;
   iniciarCuriosidades(raiz);
   raiz.querySelectorAll('.miniatura').forEach((miniatura) => miniatura.addEventListener('click', (evento) => {
     evento.preventDefault();

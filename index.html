@@ -19,64 +19,18 @@
     <!--Cabecalho-->
   <div data-site-header></div><script src="assets/js/site-header.js"></script>
 
-  <!--SELETOR DE IDIOMAS-->
-  <section class="seletor-idiomas">
-        <div class="filtro-idiomas fade-up">
-        <a href="idioma-espanhol.html" class="circulo espanhol">
-            <div class="circulo-inner">
-                <div class="frente">Espanhol</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
-
-        <a href="idioma-mandarim.html" class="circulo mandarim">
-            <div class="circulo-inner">
-                <div class="frente">Mandarim</div>
-                <div class="verso"></div>
-            </div>
-        </a>
-        <a href="id-frances.html" class="circulo frances">
-            <div class="circulo-inner">
-                <div class="frente">Francês</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
-
-        <a href="idioma-japones.html" class="circulo japones">
-            <div class="circulo-inner">
-                <div class="frente">Japonês</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
-
-        <a href="idioma-italiano.html" class="circulo italiano">
-            <div class="circulo-inner">
-                <div class="frente">Italiano</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
-
-        <a href="idioma-latim.html" class="circulo latim">
-            <div class="circulo-inner">
-                <div class="frente">Latim</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
-
-        <a href="idioma-grego.html" class="circulo grego">
-            <div class="circulo-inner">
-                <div class="frente">Grego</div>
-                <div class="verso">
-                </div>
-            </div>
-        </a>
+  <section class="seletor-idiomas" aria-label="Escolha um idioma">
+    <div class="filtro-idiomas fade-up">
+      <a href="idioma-espanhol.html" class="circulo espanhol"><div class="circulo-inner"><div class="frente">Espanhol</div><div class="verso"></div></div></a>
+      <a href="idioma-mandarim.html" class="circulo mandarim"><div class="circulo-inner"><div class="frente">Mandarim</div><div class="verso"></div></div></a>
+      <a href="id-frances.html" class="circulo frances"><div class="circulo-inner"><div class="frente">Francês</div><div class="verso"></div></div></a>
+      <a href="idioma-japones.html" class="circulo japones"><div class="circulo-inner"><div class="frente">Japonês</div><div class="verso"></div></div></a>
+      <a href="idioma-italiano.html" class="circulo italiano"><div class="circulo-inner"><div class="frente">Italiano</div><div class="verso"></div></div></a>
+      <a href="idioma-latim.html" class="circulo latim"><div class="circulo-inner"><div class="frente">Latim</div><div class="verso"></div></div></a>
+      <a href="idioma-grego.html" class="circulo grego"><div class="circulo-inner"><div class="frente">Grego</div><div class="verso"></div></div></a>
     </div>
   </section>
+
   <!--Carrossel-->
   <section class="carrossel">
     <div class="custom-carousel">
@@ -105,8 +59,16 @@
     </div>
   </section>
 
+  <div data-depoimentos-section data-idioma="todos"></div>
+
+  <h1 id="titulo-destaques" class="subtitulo subtitulo-intercambio">Intercâmbio na China</h1>
+  <section class="secao-destaques" aria-labelledby="titulo-destaques">
+    <div id="lista-destaques" aria-live="polite"></div>
+    <a class="destaques-link" href="reportagens.html">Ver todas as reportagens e publicações <span aria-hidden="true">→</span></a>
+  </section>
+
   <!--SUBTITULO LIVROS DIDATICOS-->
-  <h1 class="subtitulo"> Livros Didáticos e Teóricos </h1>
+  <h1 class="subtitulo">Aprender Idiomas</h1>
 
   <!--LIVROS DIDATICOS-->
   <section class="secaoCatalogo">
@@ -151,12 +113,14 @@
         <h3>Livro de Grego</h3>
     </a>
 
+    <a href="https://canva.link/espanholalbum" class="livro espanhol" target="_blank" rel="noopener noreferrer">
+        <img src="assets/capas/albumEspanhol.png" class="imgCard" alt="Capa do álbum de figurinhas de espanhol">
+        <h3>Álbum de Espanhol — Copa do Mundo 2026</h3>
+        <p class="livro-creditos">Fernanda Peçanha Carvalho, Aléxia Miranda Santos e Jéssica Laura Rodrigues Gonçalves</p>
+    </a>
+
   </section>
 
-  <section class="secao-destaques" aria-labelledby="titulo-destaques">
-    <h1 id="titulo-destaques" class="subtitulo">Destaques</h1>
-    <div id="lista-destaques" aria-live="polite"></div>
-  </section>
   <!--EXPOSICAO YO ARTISTA-->
 <h1 class="subtitulo">Exposição Yo Artista</h1>
 <div class="banner">
@@ -169,22 +133,37 @@
     </a>
 </div>
 
-  <div data-depoimentos-section data-idioma="todos"></div>
-
-  <!--SUBTITULO NOSSA MISSAO-->
-  <h1 class="subtitulo">Nossa Missão</h1>
-
-  <!--NOSSA MISSAO HTML-->
-  <div class="presentation">
+  <section class="mission-section" aria-labelledby="missao-title">
+    <div class="mission-heading">
+      <p>Ensino, pesquisa e extensão</p>
+      <h1 id="missao-title">Nossa Missão</h1>
+    </div>
+    <div class="presentation">
       <div class="presImg">
-          <img src="assets/imagens/missao.webp" alt="">
+          <img src="assets/imagens/missao.webp" alt="Estudantes participando de uma atividade do projeto Línguas-Culturas">
       </div>
       <div class="presContent">
-          <p class="presEffect">Aprender uma língua é abrir novas janelas para o mundo.</p>
-          <p class="text">O Línguas-Culturas aproxima estudantes do COLTEC de diferentes idiomas e modos de compreender o mundo por meio de oficinas gratuitas, materiais didáticos, produções culturais e ações de pesquisa e extensão. Mais do que ensinar vocabulário e estruturas gramaticais, o projeto cria espaços de encontro, curiosidade e troca entre pessoas e culturas.</p>
-          <p class="text">Ao reunir estudantes da educação básica e profissional, graduandos, docentes e parceiros, transformamos o aprendizado de línguas em uma experiência coletiva, acessível e conectada à realidade da comunidade.</p>
+          <p class="presEffect">Ampliar o acesso a idiomas e fortalecer a formação de professores.</p>
+          <p class="text">Criado em 2021 pela Profª. Drª. Fernanda Peçanha Carvalho, o Línguas-Culturas aproxima a UFMG da Educação Básica e Profissional. O projeto oferece oficinas gratuitas de línguas a estudantes do COLTEC, de escolas públicas de Belo Horizonte e da região metropolitana e à comunidade em geral.</p>
+          <p class="text">As ações também criam experiências práticas de formação para futuros professores da FALE-UFMG. Ao valorizar o plurilinguismo e a diversidade cultural, democratizamos oportunidades de aprendizagem e promovemos encontros entre diferentes formas de compreender o mundo.</p>
+          <a class="mission-link" href="inscricoes.html">Conheça as próximas inscrições <span aria-hidden="true">→</span></a>
       </div>
     </div>
+  </section>
+
+  <section class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-heading"><p>Informações úteis</p><h2 id="faq-title">Perguntas frequentes</h2></div>
+    <div class="faq-list">
+      <details><summary>O que é o projeto Línguas-Culturas?</summary><p>É um projeto de ensino, pesquisa e extensão do COLTEC-UFMG que promove oficinas, materiais didáticos, produções culturais e ações de formação docente.</p></details>
+      <details><summary>Quais línguas são abordadas?</summary><p>O projeto trabalha com espanhol, francês, italiano, mandarim e alemão. Em períodos específicos, também oferece atividades de grego antigo, latim e japonês.</p></details>
+      <details><summary>As oficinas são gratuitas?</summary><p>Sim. As oficinas oferecidas pelo projeto são gratuitas. As vagas e os públicos atendidos podem variar em cada edição.</p></details>
+      <details><summary>Quem pode participar?</summary><p>As ações atendem estudantes do COLTEC-UFMG, de escolas públicas de Belo Horizonte e região metropolitana e, conforme a oferta, pessoas da comunidade em geral.</p></details>
+      <details><summary>É necessário ter conhecimentos prévios?</summary><p>Nem sempre. Cada chamada informa o nível, o público e eventuais pré-requisitos da oficina. Consulte a página de inscrições antes de se candidatar.</p></details>
+      <details><summary>Onde encontro materiais para estudar?</summary><p>A seção <a href="reportagens.html#livros">Livros de Línguas</a> reúne os materiais didáticos do projeto. As páginas de cada idioma também apresentam publicações específicas.</p></details>
+      <details><summary>Como acompanho novas atividades?</summary><p>Acompanhe os destaques deste site e o perfil <a href="https://www.instagram.com/espanholcoltec/" target="_blank" rel="noopener noreferrer">@espanholcoltec</a> no Instagram.</p></details>
+      <details><summary>Como posso colaborar com o projeto?</summary><p>Entre em contato pelo Instagram ou pelos canais institucionais do COLTEC-UFMG para apresentar propostas de parceria, pesquisa ou atividades culturais.</p></details>
+    </div>
+  </section>
 
   <!--Aqui, adicionarei a proxima secao HTML-->
   

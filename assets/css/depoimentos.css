@@ -168,3 +168,16 @@
 @media (prefers-reduced-motion: reduce) {
   .depoimento-card { transition: none; }
 }
+.depoimentos-grupo { width: min(1320px, 94%); margin: 36px auto 0; }
+.depoimentos-grupo > h3 { margin: 0 0 18px; color: #176b4d; font-size: 18px; letter-spacing: .02em; }
+.depoimentos-grupo .depoimentos-videos { width: 100%; margin: 0; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.depoimentos-grupo .depoimento-video-card { display: flex; flex-direction: column; min-height: 100%; }
+.depoimentos-grupo .depoimento-video-media { width: 100%; aspect-ratio: 9 / 12; }
+.depoimentos-grupo .depoimento-video-copy { flex: 1; justify-content: flex-start; padding: 24px; }
+.depoimentos-grupo .depoimento-video-copy > p { margin-top: 18px; }
+.depoimentos-grupo .depoimento-video-copy h3 { font-size: clamp(27px, 2.4vw, 36px); }
+.depoimentos-grupo .depoimento-video-copy > a { margin-top: auto; padding-top: 24px; }
+.depoimento-video-card--destaque { border: 2px solid #c7df21; box-shadow: 0 18px 44px rgba(23,107,77,.16); }
+.depoimento-inspirador { display: inline-block; margin-bottom: 8px; padding: 5px 8px; color: #17382d; background: #eaf5a2; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+@media (max-width: 1050px) { .depoimentos-grupo .depoimentos-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .depoimentos-grupo .depoimentos-videos { grid-template-columns: 1fr; } .depoimentos-grupo .depoimento-video-media { aspect-ratio: 9 / 13; } }

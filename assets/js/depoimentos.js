@@ -34,11 +34,27 @@ const depoimentosCursos = [
 const depoimentosEmVideo = [
   {
     idioma: 'frances', idiomaNome: 'Francês', videoId: 'VRfMf7fcbqo',
-    autor: 'Lorena', curso: 'Desenvolvimento de Sistemas',
+    autor: 'Lorena', curso: 'Estudante · Desenvolvimento de Sistemas', grupo: 'estudantes',
   },
   {
     idioma: 'frances', idiomaNome: 'Francês', videoId: '90Rvchsx7vo',
-    autor: 'Cauã', curso: 'Eletrônica',
+    autor: 'Cauã', curso: 'Estudante · Eletrônica', grupo: 'estudantes',
+  },
+  {
+    idioma: 'frances', idiomaNome: 'Francês', videoId: 'ukZgR2x6pYo',
+    autor: 'Tatiane', curso: 'Ex-aluna do COLTEC · estudante de francês aos 49 anos', grupo: 'estudantes', destaque: true,
+  },
+  {
+    idioma: 'frances', idiomaNome: 'Francês', videoId: 'szzoTTNc6hI',
+    autor: 'Sarah', curso: 'Professora de francês', grupo: 'professoras',
+  },
+  {
+    idioma: 'frances', idiomaNome: 'Francês', videoId: 'ghA5-FEz4yY',
+    autor: 'Caroliny', curso: 'Professora de francês', grupo: 'professoras',
+  },
+  {
+    idioma: 'italiano', idiomaNome: 'Italiano', videoId: 'b5ljQosrz5s',
+    autor: 'Marilina', curso: 'Professora de italiano', grupo: 'professoras',
   },
 ];
 
@@ -62,9 +78,10 @@ function criarCardVideo(depoimento) {
       </a>`
     : `<iframe src="https://www.youtube.com/embed/${depoimento.videoId}?rel=0&origin=${encodeURIComponent(window.location.origin)}" title="Depoimento de ${depoimento.autor} sobre as oficinas de francês" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
 
-  return `<article class="depoimento-video-card">
+  return `<article class="depoimento-video-card${depoimento.destaque ? ' depoimento-video-card--destaque' : ''}">
     <div class="depoimento-video-media">${midia}</div>
     <div class="depoimento-video-copy">
+      ${depoimento.destaque ? '<span class="depoimento-inspirador">Uma história inspiradora</span>' : ''}
       <span class="depoimento-idioma">${depoimento.idiomaNome}</span>
       <p>Depoimento em vídeo</p>
       <h3>${depoimento.autor}</h3>
@@ -94,7 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
     marcador.outerHTML = `<section class="depoimentos-section" aria-labelledby="depoimentos-${idioma}">
       <h2 id="depoimentos-${idioma}" class="subtitulo">${titulo}</h2>
       <p class="depoimentos-intro">${introducao}</p>
-      ${videosSelecionados.length ? `<div class="depoimentos-videos">${videosSelecionados.map(criarCardVideo).join('')}</div>` : ''}
+      ${videosSelecionados.length ? (idioma === 'todos'
+        ? ['estudantes', 'professoras'].map((grupo) => {
+            const itens = videosSelecionados.filter((video) => video.grupo === grupo);
+            if (!itens.length) return '';
+            return `<div class="depoimentos-grupo"><h3>${grupo === 'estudantes' ? 'Vozes de estudantes' : 'Vozes de professoras'}</h3><div class="depoimentos-videos">${itens.map(criarCardVideo).join('')}</div></div>`;
+          }).join('')
+        : `<div class="depoimentos-videos">${videosSelecionados.map(criarCardVideo).join('')}</div>`) : ''}
       ${selecionados.length && videosSelecionados.length ? '<h3 class="depoimentos-subheading">Mais experiências compartilhadas</h3>' : ''}
       ${selecionados.length ? `<div class="depoimentos-grid">${selecionados.map(criarCardDepoimento).join('')}</div>` : ''}
     </section>`;

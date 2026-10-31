@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Miranda Sans", Arial, sans-serif; color: #102019; background: #fff; }
+.institutional-page { overflow: hidden; }
+.content-wrap { width: min(1180px, 90%); margin: auto; }
+.institutional-hero { min-height: 390px; display: grid; place-items: end start; padding: clamp(54px, 8vw, 100px) max(5%, calc((100vw - 1180px) / 2)); color: #fff; background: linear-gradient(110deg, rgba(5,35,27,.9), rgba(5,35,27,.36)), url('../fotos-mandarim/int_china.jpg') center/cover; }
+.institutional-hero--enrollment { background: radial-gradient(circle at 85% 20%, rgba(199,223,33,.4), transparent 24%), #176b4d; }
+.institutional-hero > div { max-width: 760px; }
+.institutional-kicker { margin: 0 0 10px; color: #9aad16; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.institutional-hero .institutional-kicker { color: #d9ed43; }
+.institutional-hero h1 { margin: 0; font-size: clamp(58px, 9vw, 112px); line-height: .9; letter-spacing: -.055em; }
+.institutional-hero p:last-child { max-width: 670px; margin: 24px 0 0; color: rgba(255,255,255,.86); font-size: clamp(18px, 2vw, 23px); line-height: 1.5; }
+.exchange-feature, .enrollment-status { padding: clamp(74px, 10vw, 132px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
+.exchange-copy h2, .enrollment-status h2, .exchange-stories h2, .enrollment-notes h2 { margin: 0 0 22px; font-size: clamp(36px, 5vw, 62px); line-height: 1.02; letter-spacing: -.04em; }
+.exchange-copy > p:not(.institutional-kicker), .enrollment-status > div > p { color: #53635c; font-size: 17px; line-height: 1.75; }
+.exchange-video { overflow: hidden; border-radius: 22px; box-shadow: 0 22px 54px rgba(8,47,35,.18); }
+.exchange-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+.institutional-button { display: inline-flex; margin-top: 18px; padding: 14px 19px; color: #102019 !important; background: #c7df21; border-radius: 7px; font-weight: 750; text-decoration: none !important; }
+.exchange-stories, .enrollment-notes { padding: clamp(68px, 9vw, 112px) 0; background: #edf4ef; }
+.story-grid, .note-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.story-grid a, .note-grid article { padding: 28px; color: #102019; background: #fff; border: 1px solid #d4dfd8; border-radius: 14px; text-decoration: none; }
+.story-grid span { color: #176b4d; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.story-grid h3 { margin: 12px 0 0; font-size: 20px; line-height: 1.25; }
+.status-mark { display: grid; place-items: center; width: min(360px, 75vw); aspect-ratio: 1; border-radius: 50%; color: #fff; background: #176b4d; font-size: clamp(60px, 9vw, 110px); font-weight: 800; letter-spacing: -.08em; }
+.note-grid strong { color: #176b4d; font-size: 22px; }
+.note-grid p { color: #596861; line-height: 1.55; }
+@media (max-width: 800px) { .exchange-feature, .enrollment-status, .story-grid, .note-grid { grid-template-columns: 1fr; } .status-mark { width: 220px; } }

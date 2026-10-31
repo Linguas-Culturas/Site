@@ -65,6 +65,10 @@ Referências oficiais: [Query a data source](https://developers.notion.com/refer
 
 No repositório, acesse **Settings → Secrets and variables → Actions**.
 
+> Ao clonar, transferir ou criar um novo repositório, essas configurações precisam
+> ser cadastradas novamente. Secrets e variables pertencem ao repositório no
+> GitHub e não são transportados junto com os arquivos do Git.
+
 ### Secret já existente
 
 Na aba **Secrets**, confira se existe:
@@ -108,6 +112,15 @@ O agendamento automático roda diariamente às `05:32 UTC` (aproximadamente `02:
 ### O workflow mostra `NOTION_PARA_CASA_DATA_SOURCE_ID não está configurada`
 
 A variável não foi criada no GitHub ou o nome está diferente.
+
+### O workflow mostra `Configuração do Notion ausente`
+
+Abra **Settings → Secrets and variables → Actions** no repositório atual e confira:
+
+- na aba **Secrets**, `NOTION_TOKEN`;
+- na aba **Variables**, `NOTION_PARA_CASA_DATA_SOURCE_ID`.
+
+O aviso lista exatamente os campos ausentes sem exibir nenhum valor secreto.
 
 ### O Notion responde `object_not_found` ou `404`
 

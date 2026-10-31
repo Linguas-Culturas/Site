@@ -106,3 +106,20 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
   .press-card, .press-card__media img, .press-cta a { transition: none; }
 }
+.press-card__link--secondary { margin-left: 16px; color: #8a315f !important; }
+.publication-library { padding: clamp(70px, 9vw, 120px) 0; scroll-margin-top: 86px; }
+.language-books { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 22px; }
+.language-books a { color: #12201a; text-decoration: none; }
+.language-books img { width: 100%; aspect-ratio: 3 / 4.2; object-fit: cover; border-radius: 8px; box-shadow: 0 14px 28px rgba(9,41,31,.13); transition: transform .2s ease; }
+.language-books a:hover img { transform: translateY(-6px); }
+.language-books span { display: block; margin-top: 13px; font-size: 14px; font-weight: 750; line-height: 1.35; }
+.research-publications { padding: clamp(70px, 9vw, 118px) 0; scroll-margin-top: 86px; background: #eef4ef; }
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.research-grid > a { display: grid; grid-template-columns: 104px 1fr; gap: 18px; padding: 20px; color: #102018; background: #fff; border: 1px solid #d5dfd8; border-radius: 14px; text-decoration: none; }
+.research-grid img { width: 104px; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 5px; }
+.research-grid span { color: #176b4d; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.research-grid h3 { margin: 8px 0; font-size: 19px; line-height: 1.2; }
+.research-grid p { margin: 0; color: #5b6862; font-size: 13px; line-height: 1.5; }
+.research-note { margin: 28px 0 0; color: #607069; font-size: 14px; }
+@media (max-width: 1050px) { .language-books { grid-template-columns: repeat(3, minmax(0, 1fr)); } .research-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .language-books { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; } .research-grid > a { grid-template-columns: 82px 1fr; } .research-grid img { width: 82px; } .press-card__link--secondary { margin-left: 0; } }

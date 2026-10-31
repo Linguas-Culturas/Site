@@ -20,6 +20,22 @@ jobs:
         with:
           node-version: 22
 
+      - name: Validar configuração do Notion
+        shell: bash
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PARA_CASA_DATA_SOURCE_ID: ${{ vars.NOTION_PARA_CASA_DATA_SOURCE_ID }}
+        run: |
+          faltando=()
+          [[ -n "$NOTION_TOKEN" ]] || faltando+=("secret NOTION_TOKEN")
+          [[ -n "$NOTION_PARA_CASA_DATA_SOURCE_ID" ]] || faltando+=("variable NOTION_PARA_CASA_DATA_SOURCE_ID")
+
+          if (( ${#faltando[@]} )); then
+            lista=$(IFS=', '; echo "${faltando[*]}")
+            echo "::error title=Configuração do Notion ausente::Cadastre no repositório: $lista. Acesse Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
       - name: Gerar dados dos para-casas
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}

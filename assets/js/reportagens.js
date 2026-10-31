@@ -32,6 +32,18 @@ const publicationTypes = {
   },
 };
 
+const localPublications = [
+  {
+    nome: 'Entrevista com Fernanda Peçanha Carvalho no Podcast Eureka',
+    url: 'https://open.spotify.com/episode/46S7SebuBhuCbJe3uKWdA6?si=d69b9ada054c4a45',
+    tipo: 'PODCAST',
+    briefing: 'A coordenadora do Línguas-Culturas conversa sobre educação, línguas e as experiências desenvolvidas pelo projeto.',
+    capa: 'assets/imagens/eurekaPodcast.jpg',
+    secondaryUrl: 'https://www.instagram.com/reel/DdBrrhTua5L/?utm_source=ig_web_button_share_sheet&vrfl=MzRlODBiNWFlZA==',
+    secondaryLabel: 'Ver trecho no Instagram',
+  },
+];
+
 function createCard(item, type) {
   const typeConfig = publicationTypes[type];
   const title = escapeHtml(item.nome || 'Publicação sem título');
@@ -41,6 +53,10 @@ function createCard(item, type) {
     ? `<img src="${escapeHtml(item.capa)}" alt="" loading="lazy" decoding="async">`
     : `<span class="press-card__placeholder" aria-hidden="true">${typeConfig.placeholder}</span>`;
 
+  const secondaryLink = item.secondaryUrl
+    ? `<a class="press-card__link press-card__link--secondary" href="${escapeHtml(item.secondaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.secondaryLabel || 'Ver também')} <span aria-hidden="true">↗</span></a>`
+    : '';
+
   return `<article class="press-card">
     <a class="press-card__media" href="${url}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">${cover}</a>
     <div class="press-card__content">
@@ -48,6 +64,7 @@ function createCard(item, type) {
       <h3><a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
       <p>${briefing}</p>
       <a class="press-card__link" href="${url}" target="_blank" rel="noopener noreferrer">${typeConfig.action} <span aria-hidden="true">↗</span></a>
+      ${secondaryLink}
     </div>
   </article>`;
 }
@@ -87,8 +104,9 @@ async function loadPublications() {
 
     const response = await fetch(new URL('data/destaques.json', document.baseURI));
     if (!response.ok) throw new Error(`Não foi possível carregar os dados (HTTP ${response.status}).`);
-    const data = await response.json();
-    if (!Array.isArray(data)) throw new Error('O arquivo de dados possui um formato inválido.');
+    const syncedData = await response.json();
+    if (!Array.isArray(syncedData)) throw new Error('O arquivo de dados possui um formato inválido.');
+    const data = [...localPublications, ...syncedData];
 
     const reportagens = data.filter((item) => normalizeType(item.tipo) === 'reportagem');
     const podcasts = data.filter((item) => normalizeType(item.tipo) === 'podcast');
