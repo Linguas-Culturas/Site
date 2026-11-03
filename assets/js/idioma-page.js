@@ -13,7 +13,7 @@ const idiomas = {
       { titulo: 'ONU', texto: 'Integra o grupo das seis línguas oficiais da organização', icone: 'onu' },
     ],
     materiais: [
-      { titulo: 'Álbum de Espanhol — Copa do Mundo 2026', descricao: 'Álbum de figurinhas inspirado na Copa do Mundo. Autoras: Fernanda Peçanha Carvalho, Aléxia Miranda Santos e Jéssica Laura Rodrigues Gonçalves. Diálogos: Anthonela Cordoval Ribeiro e Rafael Souza Avansse de Oliveira.', capa: 'assets/capas/albumEspanhol.png', link: 'https://canva.link/espanholalbum' },
+      { titulo: 'Álbum de Espanhol — Copa do Mundo 2026', descricao: 'Álbum de figurinhas inspirado na Copa do Mundo. Autoras: Fernanda Peçanha Carvalho, Aléxia Miranda Santos e Jéssica Laura Rodrigues Gonçalves. Diálogos: Anthonela Cordoval Ribeiro e Rafael Sousa Avansse de Oliveira.', capa: 'assets/capas/albumEspanhol.png', link: 'https://canva.link/espanholalbum' },
       { titulo: 'Experiências do ensino de línguas no período pandêmico no COLTEC', descricao: 'Registro de práticas, desafios e aprendizagens construídos durante o ensino de línguas no período pandêmico.', capa: 'assets/capas/Experiências Ensino.png', link: 'https://canva.link/788x2d17g5bq5nb' },
       { titulo: 'Internacionalização e aprendizado de espanhol', descricao: 'Leitura de apoio sobre experiências de aprendizagem, circulação de saberes e língua espanhola.', capa: 'assets/capas/LIVRO_CONVERSAS.jpeg', link: 'reportagens.html#artigos' },
       { titulo: 'Representações dos professores de Espanhol', descricao: 'Capítulo sobre a Lei Federal nº 11.161/2005, publicado em Dez anos da “Lei do Espanhol”.', capa: 'assets/capas/representacoes.jpg', link: 'https://labed-letras-ufmg.com.br/publicacoes/dez-anos-da-lei-do-espanhol/' },
@@ -24,6 +24,8 @@ const idiomas = {
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.38.jpeg', alt: 'Participante em atividade cultural de espanhol', legenda: 'Língua e expressão', classe: 'foto-vertical' },
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.40.02.jpeg', alt: 'Turma participando de atividade do projeto', legenda: 'Construção coletiva', classe: 'foto' },
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-09-08 at 12.23.30 (1).jpeg', alt: 'Materiais utilizados em oficina de espanhol', legenda: 'Espanhol em prática', classe: 'foto' },
+      { src: 'assets/fotos-espanhol/IMG_2513.webp', alt: 'Estudantes preparando uma gravação durante uma atividade de espanhol', legenda: 'Produção em língua espanhola', classe: 'foto-extra' },
+      { src: 'assets/fotos-espanhol/IMG_4021.webp', alt: 'Turma de espanhol e professora reunidas em sala de aula', legenda: 'Uma comunidade que aprende junto', classe: 'foto-extra' },
     ],
   },
   mandarim: {
@@ -194,10 +196,12 @@ function materiais(idioma) {
 }
 
 function galeria(idioma) {
-  if (idioma.galeria?.length === 4) {
+  if (idioma.galeria?.length >= 4) {
     const [grande, quadradaUm, quadradaDois, vertical] = idioma.galeria;
     const foto = (item) => `<figure class="${item.classe}"><img src="${item.src}" alt="${item.alt}" loading="lazy"><figcaption class="overlay"><h3>${item.legenda}</h3></figcaption></figure>`;
-    return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${foto(grande)}<div class="galeria-coluna">${foto(quadradaUm)}${foto(quadradaDois)}</div>${foto(vertical)}</div></section>`;
+    const extras = idioma.galeria.slice(4);
+    const gradeExtras = extras.length ? `<div class="galeria-extras">${extras.map(foto).join('')}</div>` : '';
+    return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${foto(grande)}<div class="galeria-coluna">${foto(quadradaUm)}${foto(quadradaDois)}</div>${foto(vertical)}</div>${gradeExtras}</section>`;
   }
   const placeholder = (classe, texto) => `<div class="${classe}"><div class="idioma-placeholder-foto">${texto}</div><div class="overlay"><h3>Registro em breve</h3></div></div>`;
   return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${placeholder('foto-grande', 'Imagem grande em atualização')}<div class="galeria-coluna">${placeholder('foto', 'Imagem quadrada em atualização')}${placeholder('foto', 'Imagem quadrada em atualização')}</div>${placeholder('foto-vertical', 'Imagem vertical em atualização')}</div></section>`;

@@ -126,6 +126,9 @@ body[data-idioma] .curiosidades .info h3.numero {
   color: #57514b;
   font-size: clamp(16px, 1.7vw, 19px);
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .prefacio-autoria {
@@ -269,6 +272,28 @@ body[data-idioma="mandarim"] .cta-card {
 body[data-idioma="mandarim"] .galeria .foto-grande img { object-position: center 48%; }
 body[data-idioma="mandarim"] .galeria .foto-vertical img { object-position: center 28%; }
 
+.galeria-extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.5vw, 18px);
+  margin-top: clamp(10px, 1.5vw, 18px);
+}
+
+.galeria .foto-extra {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f5f5f5;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+.galeria .foto-extra:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body[data-idioma="italiano"] .banner .imgBanner {
   object-position: center 40%;
 }
@@ -316,6 +341,9 @@ body[data-idioma="japones"] .galeria .foto-grande img { object-position: center 
 body[data-idioma="japones"] .galeria .foto-vertical img { object-position: center 44%; }
 
 @media (max-width: 760px) {
+  .galeria-extras { grid-template-columns: 1fr; }
+  .galeria .foto-extra { aspect-ratio: 3 / 4; }
+  .galeria .foto-extra .overlay { opacity: 1; transform: none; }
   .projeto-destaque a { grid-template-columns: 1fr; }
   .projeto-destaque img { min-height: 180px; }
   .videos-cabecalho { grid-template-columns: 1fr; gap: 14px; }

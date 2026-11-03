@@ -612,6 +612,11 @@
             font-family: "Miranda-sans", Helvetica, sans-serif;
             font-size: clamp(16px, 1.8vw, 22px);
         }
+        .materiais .texto-destaque p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
         .materiais .capa-destaque {
             display: block;
             aspect-ratio: 12/16;

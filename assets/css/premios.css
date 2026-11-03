@@ -46,6 +46,14 @@ html { scroll-behavior: smooth; }
 .awards-intro__number { color: transparent; font-size: clamp(72px, 10vw, 136px); font-weight: 700; line-height: .78; -webkit-text-stroke: 1px rgba(55,82,37,.3); }
 .awards-intro h2 { margin: 0; max-width: 650px; font-size: clamp(32px, 4.2vw, 55px); line-height: 1.05; letter-spacing: -.035em; }
 .awards-intro__grid > p:last-child { margin: 0; color: #576251; font-size: 17px; line-height: 1.7; }
+.awards-intro__grid > p:last-child,
+.award__copy > p,
+.award-2017__content > p:last-child,
+.award-followup p:not(.awards-eyebrow) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
 
 .awards-timeline { padding-block: clamp(78px, 10vw, 140px); }
 .award { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: clamp(30px, 5vw, 72px); }

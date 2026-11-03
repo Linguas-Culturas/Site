@@ -1043,12 +1043,12 @@
 .carrossel { margin-top: 0; }
 .depoimentos-section { padding-top: clamp(64px, 8vw, 110px); }
 .secao-destaques { width: min(1180px, 94vw); margin: 0 auto clamp(70px, 9vw, 120px); padding: 0; background: transparent; color: inherit; }
-.subtitulo-intercambio::before, .subtitulo-intercambio::after { background: #176b4d; }
+.subtitulo-intercambio::before, .subtitulo-intercambio::after { background: #7ac943; }
 .secao-destaques #lista-destaques { width: 100%; }
-.secao-destaques .destaque { color: #fff; background: linear-gradient(125deg, #0e5039, #1d7656); border: 1px solid rgba(23,107,77,.24); box-shadow: 0 12px 28px rgba(14,80,57,.12); }
-.secao-destaques .destaque:hover { color: #fff; box-shadow: 0 18px 38px rgba(14,80,57,.22); }
-.secao-destaques .destaque-content, .secao-destaques .descricao, .secao-destaques .categoria { color: #fff; }
-.secao-destaques .icon { background: #e8f2aa; }
+.secao-destaques .destaque { color: #102019; background: linear-gradient(125deg, #72c642, #8bd452); border: 1px solid #68b93c; box-shadow: 0 12px 28px rgba(83,148,48,.16); }
+.secao-destaques .destaque:hover { color: #102019; box-shadow: 0 18px 38px rgba(83,148,48,.25); }
+.secao-destaques .destaque-content, .secao-destaques .descricao, .secao-destaques .categoria { color: #102019; }
+.secao-destaques .icon { background: rgba(255,255,255,.78); }
 .destaques-link { display: flex; justify-content: flex-end; gap: 9px; margin-top: 22px; color: #176b4d !important; font-weight: 750; text-decoration: none !important; }
 .mission-section { margin-top: clamp(72px, 9vw, 126px); padding: clamp(56px, 7vw, 92px) 5%; color: #fff; background: #176b4d; }
 .mission-heading, .mission-section .presentation { width: min(1180px, 100%); margin-inline: auto; }

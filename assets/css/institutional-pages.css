@@ -12,6 +12,7 @@ body { margin: 0; font-family: "Miranda Sans", Arial, sans-serif; color: #102019
 .exchange-feature, .enrollment-status { padding: clamp(74px, 10vw, 132px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
 .exchange-copy h2, .enrollment-status h2, .exchange-stories h2, .enrollment-notes h2 { margin: 0 0 22px; font-size: clamp(36px, 5vw, 62px); line-height: 1.02; letter-spacing: -.04em; }
 .exchange-copy > p:not(.institutional-kicker), .enrollment-status > div > p { color: #53635c; font-size: 17px; line-height: 1.75; }
+.exchange-copy > p:not(.institutional-kicker), .enrollment-status > div > p { text-align: justify; text-justify: inter-word; hyphens: auto; }
 .exchange-video { overflow: hidden; border-radius: 22px; box-shadow: 0 22px 54px rgba(8,47,35,.18); }
 .exchange-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
 .institutional-button { display: inline-flex; margin-top: 18px; padding: 14px 19px; color: #102019 !important; background: #c7df21; border-radius: 7px; font-weight: 750; text-decoration: none !important; }

@@ -85,14 +85,14 @@
             </svg>
           </div>
           <div class="dropdown">
+            <a class="dropdown-link" href="reportagens.html">Publicações na mídia</a>
             <a class="dropdown-link" href="reportagens.html#livros">Livros de Línguas</a>
             <a class="dropdown-link" href="reportagens.html#artigos">Artigos e Publicações</a>
-            <a class="dropdown-link" href="https://sites.google.com/teiacoltec.org/francophonart/accueil?authuser=0">Site Francês</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-link" href="biblioteca_digital.html">E-Books</a>
             <a class="dropdown-link" href="videoblogs.html">Videoblogs</a>
-            <a class="dropdown-link" href="reportagens.html">Publicações na mídia</a>
+            <a class="dropdown-link" href="biblioteca_digital.html">E-Books</a>
             <a class="dropdown-link" href="premios.html">Prêmios</a>
+            <a class="dropdown-link" href="https://sites.google.com/teiacoltec.org/francophonart/accueil?authuser=0" target="_blank" rel="noopener noreferrer">Site Francês</a>
           </div>
         </div>
 
@@ -179,13 +179,13 @@
           <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </summary>
         <div class="mobile-sub">
+          <a href="reportagens.html">Publicações na mídia</a>
           <a href="reportagens.html#livros">Livros de Línguas</a>
           <a href="reportagens.html#artigos">Artigos e Publicações</a>
-          <a href="id-frances.html">Site Francês</a>
-          <a href="biblioteca_digital.html">E-Books</a>
           <a href="videoblogs.html">Videoblogs</a>
-          <a href="reportagens.html">Publicações na mídia</a>
+          <a href="biblioteca_digital.html">E-Books</a>
           <a href="premios.html">Prêmios</a>
+          <a href="https://sites.google.com/teiacoltec.org/francophonart/accueil?authuser=0" target="_blank" rel="noopener noreferrer">Site Francês</a>
         </div>
       </details>
 
@@ -228,7 +228,7 @@
       </div>
       <div class="site-footer__institution"><strong>Projeto de ensino, pesquisa e extensão</strong><p>Colégio Técnico da Universidade Federal de Minas Gerais<br>Av. Antônio Carlos, 6.627 · Pampulha · Belo Horizonte/MG</p></div>
       <div class="site-footer__social"><strong>Acompanhe o projeto</strong><a href="https://www.instagram.com/espanholcoltec/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do projeto"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="dot" cx="17.5" cy="6.7" r="1.1"/></svg><span>@espanholcoltec</span></a></div>
-      <div class="site-footer__credits"><p><b>Desenvolvimento:</b> Rafael Souza Avansse de Oliveira e Anthonela Cordoval Ribeiro</p><p><b>Coordenação:</b> Profª. Drª. Fernanda Peçanha Carvalho</p><p><b>Imagens:</b> Jebs Lima e acervo do projeto</p><p><b>Fomento:</b> FAPEMIG</p></div>
+      <div class="site-footer__credits"><p><b>Desenvolvimento:</b> Rafael Sousa Avansse de Oliveira e Anthonela Cordoval Ribeiro</p><p><b>Coordenação:</b> Profª. Drª. Fernanda Peçanha Carvalho</p><p><b>Imagens:</b> Jebs Lima e acervo do projeto</p><p><b>Fomento:</b> FAPEMIG</p></div>
       <p class="site-footer__legal">© ${new Date().getFullYear()} Línguas-Culturas no COLTEC-UFMG. Conteúdo educativo e institucional.</p>
     </div>`;
     document.body.append(footer);
