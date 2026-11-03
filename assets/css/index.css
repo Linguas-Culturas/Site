@@ -850,9 +850,11 @@
     /*----------------------------------------------- CSS DO CATALOGO DE LIVROS DIDATICOS -----------------------------------------------*/
     .secaoCatalogo {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
-      padding: 20px;
+      width: min(1180px, 94vw);
+      margin: 0 auto;
+      padding: 20px 0;
     }
     .livro {
         font-family: "Miranda Sans", Helvetica, sans-serif;
@@ -1084,3 +1086,13 @@
   .faq-list summary { font-size: 16px; }
 }
 .livro-creditos { margin: 5px 0 0; color: #5d6863; font-size: 12px; line-height: 1.4; }
+
+    /* Alinha o título dos livros à mesma largura do catálogo e dos destaques. */
+    .subtitulo:has(+ .secaoCatalogo) {
+      box-sizing: border-box;
+      width: min(1180px, 94vw);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
