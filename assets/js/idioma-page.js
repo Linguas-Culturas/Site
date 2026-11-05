@@ -18,14 +18,16 @@ const idiomas = {
       { titulo: 'Internacionalização e aprendizado de espanhol', descricao: 'Leitura de apoio sobre experiências de aprendizagem, circulação de saberes e língua espanhola.', capa: 'assets/capas/LIVRO_CONVERSAS.jpeg', link: 'reportagens.html#artigos' },
       { titulo: 'Representações dos professores de Espanhol', descricao: 'Capítulo sobre a Lei Federal nº 11.161/2005, publicado em Dez anos da “Lei do Espanhol”.', capa: 'assets/capas/representacoes.jpg', link: 'https://labed-letras-ufmg.com.br/publicacoes/dez-anos-da-lei-do-espanhol/' },
     ],
-    projeto: { titulo: 'Exposição Yo Artista 2026', texto: 'Conheça a exposição digital de produções artísticas e audiodescrições desenvolvidas por estudantes nas aulas de espanhol.', imagem: 'assets/imagens/yo_artista.png', link: 'yoartista2026.html' },
+    projetos: [
+      { titulo: 'Exposição Yo Artista 2026', texto: 'Conheça as produções artísticas e audiodescrições desenvolvidas pelas turmas de 2026.', imagem: 'assets/imagens/yo_artista_2026.png', link: 'yoartista2026.html' },
+      { titulo: 'Exposição Yo Artista 2025', texto: 'Visite o acervo da primeira edição da exposição digital criada nas aulas de espanhol.', imagem: 'assets/imagens/yo_artista.png', link: 'yoartista2025.html' },
+    ],
     galeria: [
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.17.jpeg', alt: 'Estudantes reunidos durante uma oficina de espanhol', legenda: 'Aprendizagem em encontro', classe: 'foto-grande' },
-      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.38.jpeg', alt: 'Participante em atividade cultural de espanhol', legenda: 'Língua e expressão', classe: 'foto-vertical' },
+      { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.39.38.jpeg', alt: 'Participante em atividade cultural de espanhol', legenda: 'Língua e expressão', classe: 'foto' },
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-10-28 at 19.40.02.jpeg', alt: 'Turma participando de atividade do projeto', legenda: 'Construção coletiva', classe: 'foto' },
       { src: 'assets/fotos-espanhol/WhatsApp Image 2026-09-08 at 12.23.30 (1).jpeg', alt: 'Materiais utilizados em oficina de espanhol', legenda: 'Espanhol em prática', classe: 'foto' },
-      { src: 'assets/fotos-espanhol/IMG_2513.webp', alt: 'Estudantes preparando uma gravação durante uma atividade de espanhol', legenda: 'Produção em língua espanhola', classe: 'foto-extra' },
-      { src: 'assets/fotos-espanhol/IMG_4021.webp', alt: 'Turma de espanhol e professora reunidas em sala de aula', legenda: 'Uma comunidade que aprende junto', classe: 'foto-extra' },
+      { src: 'assets/fotos-espanhol/IMG_4021.webp', alt: 'Turma de espanhol e professora reunidas em sala de aula', legenda: 'Uma comunidade que aprende junto', classe: 'foto' },
     ],
   },
   mandarim: {
@@ -192,16 +194,21 @@ function materiais(idioma) {
   if (!idioma.materiais.length) return '<p class="materiais-vazios">Os materiais didáticos deste idioma estão em preparação. Acompanhe as novidades por aqui.</p>';
   const principal = idioma.materiais[0];
   const miniaturas = idioma.materiais.map((material, indice) => `<a class="miniatura${indice === 0 ? ' ativa' : ''}" href="${material.link}" data-titulo="${material.titulo}" data-img="${material.capa}" data-link="${material.link}" data-desc="${material.descricao}"><img class="capa-miniatura" src="${material.capa}" alt="Capa de ${material.titulo}"><h3>${material.titulo}</h3></a>`).join('');
-  return `<div class="material-destaque"><div class="capa-container"><a id="link-destaque" href="${principal.link}" target="_blank" rel="noopener noreferrer"><img id="img-destaque" class="capa-destaque" src="${principal.capa}" alt="Capa de ${principal.titulo}"><div class="overlay"><span class="button">Ver material</span></div></a></div><div class="texto-destaque"><h3 id="titulo-destaque">${principal.titulo}</h3><p id="descricao-destaque">${principal.descricao}</p><a id="botao-destaque" class="botao-destaque" href="${principal.link}" target="_blank" rel="noopener noreferrer">Acessar material</a></div></div><div class="grade-miniaturas">${miniaturas}</div>`;
+  const navegacao = idioma.materiais.length > 3
+    ? `<div class="materiais-carrossel"><button class="materiais-seta materiais-seta--anterior" type="button" data-materiais-anterior aria-label="Ver livros anteriores">‹</button><div class="grade-miniaturas" data-materiais-trilho>${miniaturas}</div><button class="materiais-seta materiais-seta--proximo" type="button" data-materiais-proximo aria-label="Ver próximos livros">›</button></div>`
+    : `<div class="grade-miniaturas">${miniaturas}</div>`;
+  return `<div class="material-destaque"><div class="capa-container"><a id="link-destaque" href="${principal.link}" target="_blank" rel="noopener noreferrer"><img id="img-destaque" class="capa-destaque" src="${principal.capa}" alt="Capa de ${principal.titulo}"><div class="overlay"><span class="button">Ver material</span></div></a></div><div class="texto-destaque"><h3 id="titulo-destaque">${principal.titulo}</h3><p id="descricao-destaque">${principal.descricao}</p><a id="botao-destaque" class="botao-destaque" href="${principal.link}" target="_blank" rel="noopener noreferrer">Acessar material</a></div></div>${navegacao}`;
 }
 
 function galeria(idioma) {
   if (idioma.galeria?.length >= 4) {
-    const [grande, quadradaUm, quadradaDois, vertical] = idioma.galeria;
     const foto = (item) => `<figure class="${item.classe}"><img src="${item.src}" alt="${item.alt}" loading="lazy"><figcaption class="overlay"><h3>${item.legenda}</h3></figcaption></figure>`;
-    const extras = idioma.galeria.slice(4);
-    const gradeExtras = extras.length ? `<div class="galeria-extras">${extras.map(foto).join('')}</div>` : '';
-    return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${foto(grande)}<div class="galeria-coluna">${foto(quadradaUm)}${foto(quadradaDois)}</div>${foto(vertical)}</div>${gradeExtras}</section>`;
+    if (idioma.galeria.length === 5) {
+      const [grande, quadradaUm, quadradaDois, quadradaTres, quadradaQuatro] = idioma.galeria;
+      return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid galeria-grid--cinco">${foto(grande)}<div class="galeria-coluna">${foto(quadradaUm)}${foto(quadradaDois)}</div><div class="galeria-coluna">${foto(quadradaTres)}${foto(quadradaQuatro)}</div></div></section>`;
+    }
+    const [grande, quadradaUm, quadradaDois, vertical] = idioma.galeria;
+    return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${foto(grande)}<div class="galeria-coluna">${foto(quadradaUm)}${foto(quadradaDois)}</div>${foto(vertical)}</div></section>`;
   }
   const placeholder = (classe, texto) => `<div class="${classe}"><div class="idioma-placeholder-foto">${texto}</div><div class="overlay"><h3>Registro em breve</h3></div></div>`;
   return `<section class="galeria"><h1 class="subtitulo">Galeria</h1><div class="galeria-grid">${placeholder('foto-grande', 'Imagem grande em atualização')}<div class="galeria-coluna">${placeholder('foto', 'Imagem quadrada em atualização')}${placeholder('foto', 'Imagem quadrada em atualização')}</div>${placeholder('foto-vertical', 'Imagem vertical em atualização')}</div></section>`;
@@ -275,7 +282,8 @@ function renderizarPaginaIdioma() {
   if (!idioma || !raiz) return;
   document.documentElement.style.setProperty('--accent', idioma.cor);
   document.title = `${idioma.nome} — Línguas e Culturas`;
-  const projeto = idioma.projeto ? `<section class="projeto-destaque"><a href="${idioma.projeto.link}"><img src="${idioma.projeto.imagem}" alt="Imagem da ${idioma.projeto.titulo}"><div><p>Projeto em destaque</p><h2>${idioma.projeto.titulo}</h2><p>${idioma.projeto.texto}</p></div></a></section>` : '';
+  const projetos = idioma.projetos || (idioma.projeto ? [idioma.projeto] : []);
+  const projeto = projetos.length ? `<section class="projetos-idioma" aria-labelledby="projetos-idioma-titulo"><h1 class="subtitulo" id="projetos-idioma-titulo">Exposições digitais</h1><div class="projetos-idioma-grid">${projetos.map((item) => `<a class="projeto-idioma-card" href="${item.link}" aria-label="Visitar ${item.titulo}"><img src="${item.imagem}" alt=""><span class="projeto-idioma-legenda"><strong>${item.titulo}</strong><span>${item.texto}</span><b>Ver exposição →</b></span></a>`).join('')}</div></section>` : '';
   const secaoMateriais = idioma.ocultarMateriais ? '' : `<section class="materiais"><h1 class="subtitulo">Materiais e publicações</h1>${materiais(idioma)}</section>`;
   const iconePessoas = '<svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 19c.6-3.2 2.1-5 4.5-5s3.9 1.8 4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   const iconeGlobo = '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3c2.3 2.4 3.4 5.4 3.4 9S14.3 18.6 12 21c-2.3-2.4-3.4-5.4-3.4-9S9.7 5.4 12 3Z" stroke="currentColor" stroke-width="1.8"/></svg>';
@@ -291,6 +299,23 @@ function renderizarPaginaIdioma() {
     raiz.querySelector('#img-destaque').alt = `Capa de ${miniatura.dataset.titulo}`;
     ['#link-destaque', '#botao-destaque'].forEach((seletor) => raiz.querySelector(seletor).href = miniatura.dataset.link);
   }));
+
+  const trilhoMateriais = raiz.querySelector('[data-materiais-trilho]');
+  if (trilhoMateriais) {
+    const anterior = raiz.querySelector('[data-materiais-anterior]');
+    const proximo = raiz.querySelector('[data-materiais-proximo]');
+    const atualizarSetas = () => {
+      const limite = trilhoMateriais.scrollWidth - trilhoMateriais.clientWidth;
+      anterior.disabled = trilhoMateriais.scrollLeft <= 5;
+      proximo.disabled = trilhoMateriais.scrollLeft >= limite - 5;
+    };
+    const mover = (direcao) => trilhoMateriais.scrollBy({ left: direcao * Math.max(trilhoMateriais.clientWidth * .72, 220), behavior: 'smooth' });
+    anterior.addEventListener('click', () => mover(-1));
+    proximo.addEventListener('click', () => mover(1));
+    trilhoMateriais.addEventListener('scroll', atualizarSetas, { passive: true });
+    window.addEventListener('resize', atualizarSetas);
+    requestAnimationFrame(atualizarSetas);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
