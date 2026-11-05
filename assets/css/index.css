@@ -771,57 +771,60 @@
         text-transform: uppercase;
     }
     /*----------------------------------------------  CSS DA EXP. YO ARTISTA -------------------------------------------*/
-    .banner {
-        position: relative; 
-        margin: auto;
+    .yo-artista-grid {
         width: min(1180px, 94vw);
-        height: clamp(300px, 52vw, 620px);
-        max-width: none;
-        border-radius: clamp(20px, 4vw, 60px);
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(12px, 2vw, 24px);
+    }
+    .yo-artista-card {
+        position: relative;
+        display: block;
+        aspect-ratio: 4 / 3;
         overflow: hidden;
- 
-        cursor: pointer;
+        border-radius: 20px;
     }
-    .banner:hover .imgBanner {
-        transform: scale(1.05);
+    .yo-artista-card:focus-visible {
+        outline: 3px solid #176b4d;
+        outline-offset: 4px;
     }
-    .banner::after {
-        inset: 0;
-        content: "";
-        position: absolute;
-        background: rgba(26, 26, 26, 0.62);
-    }
-    .imgBanner {
+    .yo-artista-card img {
+        display: block;
         width: 100%;
         height: 100%;
-        transition: transform 0.4s ease;
         object-fit: cover;
-        z-index: -1;
     }
-    .bannerContent {
+    .yo-artista-caption {
         position: absolute;
-        bottom: 30px;
-        left: 30px;
-        color: var(--color-creme);
-        z-index: 2;
-        font-family: "Miranda Sans", Helvetica, sans-serif;
-        max-width: 400px;
+        inset: auto 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        padding: 8px clamp(10px, 2vw, 20px);
+        color: #fff;
+        background: rgba(26, 26, 26, .9);
+        font-size: clamp(13px, 2vw, 17px);
     }
-    .bannerContent p {
-        font-size: 16px;
-        margin-bottom: 15px;
+    .yo-artista-caption span {
+        color: #ffcf45;
+        font-weight: 700;
     }
-    .bannerButton {
-        display: inline-block;
-        padding: 10px 18px;
-        background: var(--color-verde-vibrante);
-        color: var(--color-preto);
-        font-weight: bold;
-        border-radius: 8px;
-        transition: 0.3s;
+    .yo-artista-card--2026 .yo-artista-caption span {
+        color: #81c846;
     }
-    .bannerButton:hover {
-        background: var(--color-creme);
+    .yo-artista-card:hover .yo-artista-caption span,
+    .yo-artista-card:focus-visible .yo-artista-caption span {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+        .yo-artista-grid {
+            max-width: 420px;
+            grid-template-columns: 1fr;
+        }
+        .yo-artista-card { border-radius: 14px; }
     }
     /*----------------------------------------------- CSS DOS SUBTITULOS -----------------------------------------------*/
     .subtitulo {
@@ -1018,8 +1021,6 @@
       .destaque-content { padding: 20px; }
       .destaque-content h3 { margin-bottom: 8px; }
       .descricao { margin-left: 0; }
-      .banner { height: clamp(280px, 78vw, 440px); }
-      .bannerContent { right: 22px; bottom: 22px; left: 22px; }
       .presentation { flex-direction: column; }
       .presImg { width: 100%; min-height: 240px; aspect-ratio: 4 / 3; }
       .presContent { flex-basis: auto; }
@@ -1050,17 +1051,17 @@
 .secao-destaques .destaque-content, .secao-destaques .descricao, .secao-destaques .categoria { color: #102019; }
 .secao-destaques .icon { background: rgba(255,255,255,.78); }
 .destaques-link { display: flex; justify-content: flex-end; gap: 9px; margin-top: 22px; color: #176b4d !important; font-weight: 750; text-decoration: none !important; }
-.mission-section { margin-top: clamp(72px, 9vw, 126px); padding: clamp(56px, 7vw, 92px) 5%; color: #fff; background: #176b4d; }
-.mission-heading, .mission-section .presentation { width: min(1180px, 100%); margin-inline: auto; }
-.mission-heading { margin-bottom: 34px; }
+.mission-section { margin-top: clamp(72px, 9vw, 126px); padding: clamp(32px, 4vw, 56px) 0; color: #fff; background: #176b4d; }
+.mission-heading, .mission-section .presentation { width: min(1180px, 94vw); margin-inline: auto; }
+.mission-heading { margin-bottom: 24px; }
 .mission-heading p, .faq-heading p { margin: 0 0 8px; color: #c7df21; font-size: 13px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
 .mission-heading h1, .faq-heading h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1; letter-spacing: -.035em; }
-.mission-section .presentation { margin: 0; display: grid; grid-template-columns: minmax(300px, .9fr) minmax(380px, 1.1fr); gap: clamp(32px, 6vw, 78px); align-items: center; }
+.mission-section .presentation { min-height: 0; margin-block: 0; display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: center; }
 .mission-section .presImg { width: 100%; }
 .mission-section .presImg img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; }
 .mission-section .presContent { width: auto; }
-.mission-section .presEffect { color: #fff; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; }
-.mission-section .text { color: rgba(255,255,255,.84); line-height: 1.72; }
+.mission-section .presEffect { margin-top: 0; color: #fff; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; }
+.mission-section .text { color: rgba(255,255,255,.84); line-height: 1.6; text-align: justify; hyphens: auto; }
 .mission-link { display: inline-flex; gap: 10px; margin-top: 18px; padding: 13px 18px; color: #10221b !important; background: #c7df21; border-radius: 7px; font-weight: 750; text-decoration: none !important; }
 .faq-section { width: min(1100px, 90%); margin: 0 auto; padding: clamp(76px, 10vw, 132px) 0; display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(40px, 8vw, 110px); }
 .faq-heading p { color: #176b4d; }
@@ -1081,18 +1082,15 @@
 
 @media (max-width: 520px) {
   .secao-destaques { padding-inline: 0; }
-  .mission-section { padding-inline: 6%; }
   .mission-section .presentation { gap: 24px; }
   .faq-list summary { font-size: 16px; }
 }
 .livro-creditos { margin: 5px 0 0; color: #5d6863; font-size: 12px; line-height: 1.4; }
 
-    /* Alinha o título dos livros à mesma largura do catálogo e dos destaques. */
-    .subtitulo:has(+ .secaoCatalogo) {
-      box-sizing: border-box;
-      width: min(1180px, 94vw);
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-    }
+.depoimentos-section[aria-labelledby="depoimentos-todos"] {
+  width: auto;
+}
+.depoimentos-section[aria-labelledby="depoimentos-todos"] > :not(.subtitulo) {
+  width: min(1180px, 94vw);
+  margin-inline: auto;
+}
