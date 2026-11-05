@@ -40,7 +40,7 @@
         </figure>
         <div class="art-copy">
           <h2 class="art-title">${obra.autor}</h2>
-          <span class="class-chip">Turma: ${obra.turma}</span>
+          <span class="class-chip">${obra.turma ? `Turma: ${obra.turma}` : obra.contexto}</span>
           <button class="audio-button" type="button" data-audio="${obra.audio || ''}" data-empty="${obra.audio ? 'false' : 'true'}" aria-label="Reproduzir áudio da obra de ${obra.autor}">
             ${playIcon()}
             <span>${obra.audio ? 'Ouvir áudio' : 'Áudio em breve'}</span>
