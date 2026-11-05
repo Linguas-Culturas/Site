@@ -21,7 +21,22 @@ body { margin: 0; font-family: "Miranda Sans", Arial, sans-serif; color: #102019
 .story-grid a, .note-grid article { padding: 28px; color: #102019; background: #fff; border: 1px solid #d4dfd8; border-radius: 14px; text-decoration: none; }
 .story-grid span { color: #176b4d; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .story-grid h3 { margin: 12px 0 0; font-size: 20px; line-height: 1.25; }
+.exchange-history { padding: clamp(76px, 9vw, 118px) 0 0; background: #fff; }
+.exchange-history__heading { max-width: 850px; margin-bottom: clamp(28px, 5vw, 58px); text-align: center; }
+.exchange-history__heading h2 { margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1; letter-spacing: -.045em; }
+.exchange-history__heading > p:last-child { max-width: 720px; margin: 24px auto 0; color: #53635c; font-size: 18px; line-height: 1.65; }
+.exchange-history__list .exchange-feature { padding: clamp(58px, 7vw, 92px) 0; border-top: 1px solid #dfe8e2; }
+.exchange-feature--reverse .exchange-copy { order: 2; }
+.exchange-feature--reverse .exchange-placeholder { order: 1; }
+.exchange-placeholder { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 360px; overflow: hidden; padding: 34px; border: 1px dashed #8eaa9a; border-radius: 22px; color: #fff; background: linear-gradient(135deg, #145f46, #2b8b68); box-shadow: 0 22px 54px rgba(8,47,35,.14); text-align: center; }
+.exchange-placeholder::before, .exchange-placeholder::after { content: ""; position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; }
+.exchange-placeholder::before { width: 270px; aspect-ratio: 1; top: -100px; right: -70px; }
+.exchange-placeholder::after { width: 180px; aspect-ratio: 1; bottom: -90px; left: -40px; }
+.exchange-placeholder__mark { display: grid; place-items: center; width: 112px; aspect-ratio: 1; margin: 0 auto 22px; border-radius: 50%; color: #173b2e; background: #d9ed43; font-size: 31px; font-weight: 850; letter-spacing: -.03em; }
+.exchange-placeholder strong, .exchange-placeholder div > span { display: block; }
+.exchange-placeholder strong { font-size: 30px; letter-spacing: -.025em; }
+.exchange-placeholder div > span { margin-top: 7px; color: rgba(255,255,255,.72); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .status-mark { display: grid; place-items: center; width: min(360px, 75vw); aspect-ratio: 1; border-radius: 50%; color: #fff; background: #176b4d; font-size: clamp(60px, 9vw, 110px); font-weight: 800; letter-spacing: -.08em; }
 .note-grid strong { color: #176b4d; font-size: 22px; }
 .note-grid p { color: #596861; line-height: 1.55; }
-@media (max-width: 800px) { .exchange-feature, .enrollment-status, .story-grid, .note-grid { grid-template-columns: 1fr; } .status-mark { width: 220px; } }
+@media (max-width: 800px) { .exchange-feature, .enrollment-status, .story-grid, .note-grid { grid-template-columns: 1fr; } .exchange-feature--reverse .exchange-copy, .exchange-feature--reverse .exchange-placeholder { order: initial; } .exchange-placeholder { min-height: 270px; } .status-mark { width: 220px; } }

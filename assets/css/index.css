@@ -579,7 +579,9 @@
     .carousel-slide img {
         display: block;
         width: 100%;
-        height: clamp(240px, 38vw, 520px);
+        /* Mantém o carrossel próximo da proporção original das fotos.
+           A altura anterior criava uma faixa muito larga e cortava rostos. */
+        height: clamp(320px, 56vw, 680px);
         object-fit: cover;
         border-radius: inherit;
         object-position: center center;
